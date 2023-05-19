@@ -1,0 +1,11 @@
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+tbody tr:hover{
+    background-color: white;
+    transform: scale(1.01);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
+}
