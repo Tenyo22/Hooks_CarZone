@@ -66,7 +66,7 @@ module.exports.handleDelete = (item, setInfoCar) => {
         if (result.isConfirmed) {
             infoCar = infoCar.filter((obj) => obj.id !== item.id)
             setInfoCar(this.selectInfoCar);
-
+            bandera = true;
             Swal.fire(
                 'Deleted!',
                 'El registro ha sido eliminado.',
@@ -127,17 +127,17 @@ module.exports.updateData = (hooks, setHooks, opcionesMarca) => {
     })
 
     // Limpiar campos
-    setHooks.setAux(bandera);
-    setHooks.setNiv('')
-    setHooks.setMarca(opcionesMarca[0])
-    setHooks.setModelo('')
-    setHooks.setAnio('')
-    setHooks.setPrecio('')
-    setHooks.setKm('')
-    setHooks.setFoto(null)
-    setHooks.setEnviar('Guardar');
+    // setHooks.setAux(bandera);
+    // setHooks.setNiv('')
+    // setHooks.setMarca(opcionesMarca[0])
+    // setHooks.setModelo('')
+    // setHooks.setAnio('')
+    // setHooks.setPrecio('')
+    // setHooks.setKm('')
+    // setHooks.setFoto(null)
+    // setHooks.setEnviar('Guardar');
     bandera = true;
-    setHooks.setAux(bandera);
+    // setHooks.setAux(bandera);
 
     // console.log(infoCar);
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { addInfoCar, handleChangeMarca, handleImageChange, putData, updateData, validate } from '../js/options';
 import Swal from 'sweetalert2';
 
@@ -30,14 +30,30 @@ const Formulario = () => {
 
   // let dataAct=[];
   const objHooks = { niv, marca, modelo, anio, precio, km, imagen };
-  const objSetHooks = { setNiv, setMarca, setModelo, setAnio, setPrecio, setKm, setFoto, setEnviar, setAux };
+  const objSetHooks = useMemo(() => {
+    return { setNiv, setMarca, setModelo, setAnio, setPrecio, setKm, setFoto, setEnviar, setAux };
+  }, []);
 
   useEffect(() => {
     // console.log(aux);
     if (!aux) {
       putData(objSetHooks, opcionesMarca);
+      // setAux(true);
     }
   }, [aux, opcionesMarca, objSetHooks]);
+
+  const limpiarCampos = () => {
+    // Limpiar campos
+    setAux(true);
+    setNiv('')
+    setMarca(opcionesMarca[0])
+    setModelo('')
+    setAnio('')
+    setPrecio('')
+    setKm('')
+    setFoto(null)
+    setEnviar('Guardar');
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -50,6 +66,7 @@ const Formulario = () => {
         addInfoCar(datos, clean);
       } else {
         updateData(objHooks, objSetHooks, opcionesMarca);
+        limpiarCampos();
       }
     }
 

@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Agenda = () => {
-    const [cliente, setCliente] = useState([
+    const cliente = [
         { id: 1, user: 'Alfredo', car: 'Camaro', reservation: '2023-05-20', phone: '5534567890', email: 'usuario1@example.com', time: '10:00 AM' },
         { id: 2, user: 'Mario', car: 'Grand Cherokee', reservation: '2023-05-21', phone: '5576544321', email: 'usuario2@example.com', time: '11:30 AM' },
         { id: 3, user: 'Francisco', car: 'Mustang', reservation: '2023-05-22', phone: '5546205890', email: 'usuario3@example.com', time: '11:45 AM' },
         { id: 4, user: 'Javier', car: 'Cavalier', reservation: '2023-05-22', phone: '5545894023', email: 'usuario3@example.com', time: '12:00 PM' },
         { id: 5, user: 'Juan', car: 'Jetta', reservation: '2023-05-22', phone: '5589601059', email: 'usuario3@example.com', time: '12:15 PM' },
-    ]);
+    ];
 
     return (
         <>
