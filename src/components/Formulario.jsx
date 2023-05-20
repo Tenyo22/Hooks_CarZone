@@ -6,12 +6,15 @@ const Formulario = () => {
 
   const [opcionesMarca, setOpcionesMarca] = useState([
     { value: '0', label: '-- Seleccione --' },
-    { value: '2', label: 'Audi' },
-    { value: '3', label: 'Mazda' },
-    { value: '4', label: 'Chevrolet' },
-    { value: '5', label: 'Ford' },
-    { value: '6', label: 'BMW' },
-    { value: '7', label: 'Jetta' }
+    { value: '1', label: 'Audi' },
+    { value: '2', label: 'BMW' },
+    { value: '3', label: 'Chevrolet' },
+    { value: '4', label: 'Ford' },
+    { value: '5', label: 'Honda' },
+    { value: '6', label: 'Jetta' },
+    { value: '7', label: 'Mazda' },
+    { value: '8', label: 'Nissan' },
+    { value: '9', label: 'Toyota' }
   ]);
 
   // const [infoCar, setInforCar] = useState([]);
@@ -34,7 +37,7 @@ const Formulario = () => {
     if (!aux) {
       putData(objSetHooks, opcionesMarca);
     }
-  }, [])
+  }, [aux, opcionesMarca, objSetHooks]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

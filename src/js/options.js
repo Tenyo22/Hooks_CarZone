@@ -77,10 +77,10 @@ module.exports.handleDelete = (item, setInfoCar) => {
 }
 
 module.exports.handleEdit = (item, setInfoCar) => {
-    // console.log(item.id)
     const infoCarIndex = infoCar.findIndex(obj => obj.id === item.id)
     // Respaldo y modificacion de la nueva informacion
     datosAct = infoCar[infoCarIndex]
+    console.log(datosAct)
     bandera = false;
     setInfoCar(infoCar)
 }
